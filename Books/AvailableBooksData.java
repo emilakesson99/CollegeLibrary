@@ -10,6 +10,9 @@ public class AvailableBooksData implements BookModel {
         updateAvailableBooks();
     }
 
+    /**
+     * This method could be extended so it adds books from a certain region ex NORTH
+     */
     public void updateAvailableBooks() {
         for (Book book : AllBooksData.getBooks()) {
             if (!checkBook(book) & book.isAvailable()) {

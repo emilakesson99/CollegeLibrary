@@ -9,7 +9,7 @@ public class FacadeFactory {
         LibraryFacade facade = null;
         switch (campus) {
             case "NORTH":
-                facade = new LibraryFacade(DataWrapper_NorthCampusStanford.getInstance());
+                facade = new LibraryFacade(new DataWrapper_NorthCampusStanford());
                 break;
             case "SOUTH":
                 /*facade = new LibraryFacade("South");*/

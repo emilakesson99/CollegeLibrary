@@ -8,7 +8,7 @@ public class Book {
     private final String language;
     private final List<String> categories = new ArrayList<>();
     private final int id;
-    private String location;
+    private String location; //To be extended in the program for different libraries
     private BookState state;
 
     public Book(String title, String author, String language, String category, int id, String location) {

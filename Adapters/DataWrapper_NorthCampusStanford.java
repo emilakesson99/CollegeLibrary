@@ -2,10 +2,9 @@ import java.util.List;
 
 public class DataWrapper_NorthCampusStanford implements DataWrapper {
 
-    private static final DataWrapper_NorthCampusStanford data = new DataWrapper_NorthCampusStanford();
     private final BookModel availableBooks;
 
-    private DataWrapper_NorthCampusStanford() {
+    public DataWrapper_NorthCampusStanford() {
         this.availableBooks = new AvailableBooksData();
     }
 
@@ -40,10 +39,5 @@ public class DataWrapper_NorthCampusStanford implements DataWrapper {
     public List<Loan> getUserSpecificLoans(CanBorrow borrower) {
         return AllLoansData.getUserSpecificLoans(borrower);
     }
-
-    public static DataWrapper_NorthCampusStanford getInstance() {
-        return data;
-    }
-
 
 }
