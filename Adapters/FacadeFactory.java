@@ -12,7 +12,7 @@ public class FacadeFactory {
                 facade = new LibraryFacade(new DataWrapper_NorthCampusStanford());
                 break;
             case "SOUTH":
-                /*facade = new LibraryFacade("South");*/
+                facade = new LibraryFacade(new DataWrapper_SouthCampusStanford());
                 break;
 
             default:

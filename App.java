@@ -6,7 +6,7 @@ public class App {
         Book book1 = new Book("LORD OF THE RINGS", "JRR TOLKIEN", "ENGLISH", "FANTASY", 1, "NORTH");
         book1.addCategory("EPIC");
 
-        Book book2 = new Book("LORD OF THE RINGS II", "JRR TOLKIEN", "ENGLISH", "FANTASY", 2, "NORTH");
+        Book book2 = new Book("LORD OF THE RINGS II", "JRR TOLKIEN", "ENGLISH", "FANTASY", 2, "SOUTH");
         book2.addCategory("EPIC");
 
         Book book3 = new Book("DAS TAGEBUCH DER ANNE FRANK", "ANNE FRANK", "GERMAN", "HISTORY", 3, "NORTH");
@@ -22,7 +22,7 @@ public class App {
         Borrower teacher = new Student("MARY WILLYS", 2, "NORTH");
 
         student.borrowBook(book1, "NORTH");
-        student.borrowBook(book2, "NORTH");
+        student.borrowBook(book2, "SOUTH");
         student.showLoans("NORTH");
         student.showAvailableBooks("NORTH");
 

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class NorthCampusLibrary extends Library implements StanfordCollegeLibrary {
+public class SouthCampusLibrary extends Library implements StanfordCollegeLibrary {
 
     private final List<Student> registeredStudents = new ArrayList<>();
-    BookModel books = new AvailableBooksNorth();
+    BookModel books = new AvailableBooksSouth();
 
     @Override
     public List<Student> getAllStudents() {

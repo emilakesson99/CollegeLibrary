@@ -64,6 +64,10 @@ public class Book {
         this.location = location;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     @Override
     public String toString() {
         return "Book{" +

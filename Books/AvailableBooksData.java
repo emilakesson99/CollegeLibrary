@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AvailableBooksData implements BookModel {
+public abstract class AvailableBooksData implements BookModel {
 
     private final List<Book> books = new ArrayList<>();
 
@@ -13,13 +13,7 @@ public class AvailableBooksData implements BookModel {
     /**
      * This method could be extended so it adds books from a certain region ex NORTH
      */
-    public void updateAvailableBooks() {
-        for (Book book : AllBooksData.getBooks()) {
-            if (!checkBook(book) & book.isAvailable()) {
-                books.add(book);
-            }
-        }
-    }
+    abstract public void updateAvailableBooks();
 
     public Boolean checkBook(Book book) {
         return books.contains(book);
@@ -55,6 +49,10 @@ public class AvailableBooksData implements BookModel {
             }
         }
 
+    }
+
+    public List<Book> getBooks() {
+        return books;
     }
 
     public List<Book> getAvailableBooks() {

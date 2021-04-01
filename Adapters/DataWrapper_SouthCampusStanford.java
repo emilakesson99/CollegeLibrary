@@ -1,11 +1,11 @@
 import java.util.List;
 
-public class DataWrapper_NorthCampusStanford implements DataWrapper {
+public class DataWrapper_SouthCampusStanford implements DataWrapper {
 
     private final BookModel availableBooks;
 
-    public DataWrapper_NorthCampusStanford() {
-        this.availableBooks = new AvailableBooksNorth();
+    public DataWrapper_SouthCampusStanford() {
+        this.availableBooks = new AvailableBooksSouth();
     }
 
     /**
