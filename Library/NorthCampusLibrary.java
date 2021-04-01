@@ -3,7 +3,6 @@ import java.util.List;
 
 public class NorthCampusLibrary extends Library implements StanfordCollegeLibrary {
 
-    private static final NorthCampusLibrary lib = new NorthCampusLibrary();
     private final List<Student> registeredStudents = new ArrayList<>();
 
     @Override
@@ -16,7 +15,4 @@ public class NorthCampusLibrary extends Library implements StanfordCollegeLibrar
         registeredStudents.add(s);
     }
 
-    public static NorthCampusLibrary getInstance() {
-        return lib;
-    }
 }
