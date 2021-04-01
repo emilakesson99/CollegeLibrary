@@ -1,11 +1,7 @@
-
-
-import java.time.LocalDate;
 import java.util.List;
 
 public class LibraryFacade {
 
-    private Boolean closeAccess;
     private DataWrapper data;
 
     /**
@@ -14,7 +10,6 @@ public class LibraryFacade {
      * @param data
      */
     public LibraryFacade(DataWrapper data) {
-        this.closeAccess = false;
         this.data = data;
     }
 
@@ -25,10 +20,7 @@ public class LibraryFacade {
      * @throws LibraryClosed
      * @throws NoBookAvailableException
      */
-    void checkAccess(Book book) throws LibraryClosed, NoBookAvailableException {
-        if (closeAccess) {
-            throw new LibraryClosed();
-        }
+    void checkAccess(Book book) throws NoBookAvailableException {
         if (!book.isAvailable()) {
             throw new NoBookAvailableException();
         }
