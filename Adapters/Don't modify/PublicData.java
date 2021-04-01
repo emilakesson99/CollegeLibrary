@@ -36,7 +36,5 @@ public abstract class PublicData implements DataWrapper {
      * Loan Operations
      */
     @Override
-    public List<Loan> getUserSpecificLoans(CanBorrow borrower) {
-        return AllLoansData.getUserSpecificLoans(borrower);
-    }
+    public abstract List<Loan> getUserSpecificLoans(CanBorrow borrower);
 }
