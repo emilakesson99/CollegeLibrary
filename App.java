@@ -16,7 +16,7 @@ public class App {
         AllBooksData.addBook(book2);
         AllBooksData.addBook(book3);
 
-        Library stanford = new NorthCampusLibrary();
+        StanfordCollegeLibrary stanford = new NorthCampusLibrary();
 
         Student student = new Student("ANDREW GARCIA ", 1, "NORTH");
         Borrower teacher = new Student("MARY WILLYS", 2, "NORTH");
