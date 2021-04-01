@@ -14,6 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Adapters/Facade" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Books/Don't modify" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/Don't modify" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Users/Don't modify" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
