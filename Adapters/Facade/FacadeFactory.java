@@ -16,6 +16,7 @@ public class FacadeFactory {
                 break;
 
             default:
+                facade = new LibraryFacade(null);
                 break;
         }
         return facade;

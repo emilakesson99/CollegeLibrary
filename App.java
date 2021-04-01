@@ -1,6 +1,6 @@
 public class App {
 
-    public static void main(String[] args) throws NoBookFoundException, LibraryClosed, NoBookAvailableException {
+    public static void main(String[] args) throws NoBookFoundException, LibraryClosed, NoBookAvailableException, NoBookIssuedException {
 
 
         Book book1 = new Book("LORD OF THE RINGS", "JRR TOLKIEN", "ENGLISH", "FANTASY", 1, "NORTH");
@@ -25,17 +25,10 @@ public class App {
         student.borrowBook(book2, "SOUTH");
         student.showLoans("NORTH");
         student.showAvailableBooks("NORTH");
+        student.showAvailableBooks("SOUTH");
 
         System.out.println();
 
-        student.returnBook(book1, "NORTH");
-        student.showLoans("NORTH");
-
-        System.out.println();
-
-        teacher.borrowBook(book3, "NORTH");
-        teacher.borrowBook(book1, "NORTH");
-        teacher.showLoans("NORTH");
 
     }
 }

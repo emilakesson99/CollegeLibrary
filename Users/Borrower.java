@@ -28,24 +28,29 @@ public class Borrower implements CanBorrow {
     }
 
     public void showAvailableBooks(String location) {
-        for (Book book : getFacade(location).getAvailableBooks()) {
-            System.out.println(book.toString());
+        List<Book> list = getFacade(location).getAvailableBooks();
+        if (list.isEmpty()) {
+            System.out.println("No books available");
+        } else {
+            for (Book book : getFacade(location).getAvailableBooks()) {
+                System.out.println(book.toString());
+            }
         }
 
     }
 
-    public void returnBook(Book book, String location) throws NoBookFoundException {
+    public void returnBook(Book book, String location) throws NoBookFoundException, NoBookIssuedException {
         getFacade(location).returnBooks(book, this);
     }
 
-    public void borrowBook(Book book, String location) throws NoBookFoundException, LibraryClosed, NoBookAvailableException {
+    public void borrowBook(Book book, String location) throws NoBookFoundException, LibraryClosed, NoBookAvailableException, NoBookIssuedException {
         getFacade(location).borrowBooks(book, this);
     }
 
     public void showLoans(String location) {
         List<Loan> list = getFacade(location).checkYourLoans(this);
         if (list.isEmpty()) {
-            System.out.println("No books available");
+            System.out.println("No books lent");
         } else {
             for (Loan l : getFacade(location).checkYourLoans(this)) {
                 System.out.println(l.toString());

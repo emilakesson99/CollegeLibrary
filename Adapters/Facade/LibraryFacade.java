@@ -11,6 +11,7 @@ public class LibraryFacade {
      */
     public LibraryFacade(DataWrapper data) {
         this.data = data;
+
     }
 
     /**
@@ -26,13 +27,19 @@ public class LibraryFacade {
         }
     }
 
+    void checkDataNotNull() throws NoBookIssuedException {
+        if (data == null) {
+            throw new NoBookIssuedException();
+        }
+    }
 
     /**
      * Returns book to library
      *
      * @param book
      */
-    public <T extends CanBorrow> void returnBooks(Book book, T borrower) throws NoBookFoundException {
+    public <T extends CanBorrow> void returnBooks(Book book, T borrower) throws NoBookFoundException, NoBookIssuedException {
+        checkDataNotNull();
         book.setState(new Available());
         data.returnBook(book, borrower);
     }
@@ -47,7 +54,8 @@ public class LibraryFacade {
      * @throws LibraryClosed
      * @throws NoBookAvailableException
      */
-    public <T extends CanBorrow> void borrowBooks(Book book, T borrower) throws NoBookFoundException, LibraryClosed, NoBookAvailableException {
+    public <T extends CanBorrow> void borrowBooks(Book book, T borrower) throws NoBookFoundException, LibraryClosed, NoBookAvailableException, NoBookIssuedException {
+        checkDataNotNull();
         checkAccess(book);
         book.setState(new NotAvailable());
         data.lendBook(book, borrower);
@@ -61,7 +69,7 @@ public class LibraryFacade {
      * @return
      */
     public <T extends Borrower> List<Loan> checkYourLoans(T borrower) {
-        return data.getUserSpecificLoans(borrower);
+        return AllLoansData.getUserSpecificLoans(borrower);
     }
 
     public List<Book> getAvailableBooks() {
