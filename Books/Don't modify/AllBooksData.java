@@ -16,7 +16,7 @@ public class AllBooksData {
     public static int getAmountOfBooksInCategory(String checkC) {
 
         int result = 0;
-
+        //Possible violation against LOD
         for (Book b : getBooks()) {
             if (b.getCategories().contains(checkC)) {
                 result++;
