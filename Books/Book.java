@@ -68,6 +68,13 @@ public class Book {
         return location;
     }
 
+    public int checkCategorys(String c) {
+        if (getCategories().contains(c)) {
+            return 1;
+        }
+        return 0;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
