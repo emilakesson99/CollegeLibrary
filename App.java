@@ -16,14 +16,20 @@ public class App {
         AllBooksData.addBook(book2);
         AllBooksData.addBook(book3);
 
-        StanfordCollegeLibrary stanford = new NorthCampusLibrary();
+        StanfordCollegeLibrary stanfordNorth = new CampusLibrary("NORTH");
+        StanfordCollegeLibrary stanfordSouth = new CampusLibrary("SOUTH");
 
-        Student student = new Student("ANDREW GARCIA ", 1, "NORTH");
-        Borrower teacher = new Student("MARY WILLYS", 2, "NORTH");
 
+
+        Borrower student = new Student("ANDREW GARCIA ", 1, "NORTH");
+
+        student.showAvailableBooks("NORTH");
+        student.showAvailableBooks("SOUTH");
+        System.out.println();
         student.borrowBook(book1, "NORTH");
         student.borrowBook(book2, "SOUTH");
-        student.showLoans("NORTH");
+        student.showLoans();
+        System.out.println();
         student.showAvailableBooks("NORTH");
         student.showAvailableBooks("SOUTH");
 

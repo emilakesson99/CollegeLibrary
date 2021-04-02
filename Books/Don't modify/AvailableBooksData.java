@@ -6,14 +6,14 @@ public abstract class AvailableBooksData implements BookModel {
 
     private final List<Book> books = new ArrayList<>();
 
-    public AvailableBooksData() {
-        updateAvailableBooks();
+    public AvailableBooksData(String libraryName) {
+        updateAvailableBooks(libraryName);
     }
 
     /**
      * This method could be extended so it adds books from a certain region ex NORTH
      */
-    abstract public void updateAvailableBooks();
+    abstract public void updateAvailableBooks(String s);
 
     public Boolean checkBook(Book book) {
         return books.contains(book);

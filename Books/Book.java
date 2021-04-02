@@ -75,6 +75,8 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", language='" + language + '\'' +
                 ", categories=" + categories +
+                ", location='" + location + '\'' +
+                ", state=" + state +
                 '}';
     }
 }

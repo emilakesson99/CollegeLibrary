@@ -1,8 +1,8 @@
 import java.util.List;
 
-public class DataWrapper_NorthCampusStanford extends PublicData {
-    public DataWrapper_NorthCampusStanford() {
-        super(new AvailableBooksNorth());
+public class DataWrapperUser extends PublicData {
+    public DataWrapperUser(String libraryName) {
+        super(new AvailableBooks(libraryName));
     }
 
     @Override

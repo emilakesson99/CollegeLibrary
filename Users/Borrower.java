@@ -23,36 +23,36 @@ public class Borrower implements CanBorrow {
     }
 
 
-    public LibraryFacade getFacade(String location) {
-        return FacadeFactory.buildFactory(location);
+    public LibraryFacade getFacade(String libraryName) {
+        return FacadeFactory.buildFactory(libraryName);
     }
 
-    public void showAvailableBooks(String location) {
-        List<Book> list = getFacade(location).getAvailableBooks();
+    public void showAvailableBooks(String libraryName) {
+        List<Book> list = getFacade(libraryName).getAvailableBooks();
         if (list.isEmpty()) {
             System.out.println("No books available");
         } else {
-            for (Book book : getFacade(location).getAvailableBooks()) {
+            for (Book book : getFacade(libraryName).getAvailableBooks()) {
                 System.out.println(book.toString());
             }
         }
 
     }
 
-    public void returnBook(Book book, String location) throws NoBookFoundException, NoBookIssuedException {
-        getFacade(location).returnBooks(book, this);
+    public void returnBook(Book book, String libraryName) throws NoBookFoundException, NoBookIssuedException {
+        getFacade(libraryName).returnBooks(book, this);
     }
 
-    public void borrowBook(Book book, String location) throws NoBookFoundException, LibraryClosed, NoBookAvailableException, NoBookIssuedException {
-        getFacade(location).borrowBooks(book, this);
+    public void borrowBook(Book book, String libraryName) throws NoBookFoundException, LibraryClosed, NoBookAvailableException, NoBookIssuedException {
+        getFacade(libraryName).borrowBooks(book, this);
     }
 
-    public void showLoans(String location) {
-        List<Loan> list = getFacade(location).checkYourLoans(this);
+    public void showLoans() {
+        List<Loan> list = getFacade("null").checkYourLoans(this);
         if (list.isEmpty()) {
             System.out.println("No books lent");
         } else {
-            for (Loan l : getFacade(location).checkYourLoans(this)) {
+            for (Loan l : list) {
                 System.out.println(l.toString());
             }
         }
