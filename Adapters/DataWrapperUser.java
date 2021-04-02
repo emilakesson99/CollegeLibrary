@@ -2,7 +2,7 @@ import java.util.List;
 
 public class DataWrapperUser extends PublicData {
     public DataWrapperUser(String libraryName) {
-        super(new AvailableBooks(libraryName));
+        super(new AvailableBooks(libraryName), libraryName);
     }
 
     /**

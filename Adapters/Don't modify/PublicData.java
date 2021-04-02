@@ -3,9 +3,11 @@ import java.util.List;
 public abstract class PublicData implements DataWrapper {
     //User data accessible
     private final BookModel availableBooks;
+    private final String libraryName;
 
-    public PublicData(BookModel bookModel) {
+    public PublicData(BookModel bookModel, String libraryName) {
         this.availableBooks = bookModel;
+        this.libraryName = libraryName;
     }
 
     /**
@@ -37,4 +39,8 @@ public abstract class PublicData implements DataWrapper {
      */
     @Override
     public abstract List<Loan> getUserSpecificLoans(CanBorrow borrower);
+
+    public String getLibraryName() {
+        return libraryName;
+    }
 }

@@ -46,6 +46,7 @@ public class LibraryFacade {
     public <T extends CanBorrow> void returnBooks(Book book, T borrower) throws NoBookFoundException, NoBookIssuedException {
         checkDataNotNull();
         book.setState(new Available());
+        book.setLocation(data.getLibraryName());
         data.returnBook(book, borrower);
     }
 

@@ -18,11 +18,8 @@ public class AllBooksData {
         int result = 0;
 
         for (Book b : getBooks()) {
-            for (int i = 0; i < b.getCategories().size(); i++) {
-                String C = b.getCategories().get(i);
-                if (C.equals(checkC)) {
-                    result++;
-                }
+            if (b.getCategories().contains(checkC)) {
+                result++;
             }
         }
         return result;

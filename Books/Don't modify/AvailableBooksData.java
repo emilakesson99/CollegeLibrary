@@ -5,7 +5,6 @@ import java.util.List;
 public abstract class AvailableBooksData implements BookModel {
 
     private final List<Book> books = new ArrayList<>();
-
     public AvailableBooksData(String libraryName) {
         updateAvailableBooks(libraryName);
     }

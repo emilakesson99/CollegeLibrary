@@ -20,5 +20,10 @@ public interface DataWrapper {
 
     List<Loan> getUserSpecificLoans(CanBorrow borrower);
 
-
+    /**
+     * Get library name
+     *
+     * @return String
+     */
+    String getLibraryName();
 }
