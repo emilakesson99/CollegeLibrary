@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllLoansData {
-
+    /**
+     * Database for all loans
+     */
     private static final List<Loan> loans = new ArrayList<>();
 
     public static List<Loan> getUserSpecificLoans(CanBorrow borrower) {

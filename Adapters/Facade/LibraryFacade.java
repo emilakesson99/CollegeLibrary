@@ -27,6 +27,11 @@ public class LibraryFacade {
         }
     }
 
+    /**
+     * If user only wants to check their loans, they dont need the data.
+     *
+     * @throws NoBookIssuedException
+     */
     void checkDataNotNull() throws NoBookIssuedException {
         if (data == null) {
             throw new NoBookIssuedException();
@@ -72,7 +77,8 @@ public class LibraryFacade {
         return AllLoansData.getUserSpecificLoans(borrower);
     }
 
-    public List<Book> getAvailableBooks() {
+    public List<Book> getAvailableBooks() throws NoBookIssuedException {
+        checkDataNotNull();
         return data.getAvailableBooksList();
     }
 }

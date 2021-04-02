@@ -1,7 +1,7 @@
 import java.util.List;
 
 public abstract class PublicData implements DataWrapper {
-
+    //User data accessible
     private final BookModel availableBooks;
 
     public PublicData(BookModel bookModel) {

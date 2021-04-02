@@ -12,13 +12,8 @@ public class App {
         Book book3 = new Book("DAS TAGEBUCH DER ANNE FRANK", "ANNE FRANK", "GERMAN", "HISTORY", 3, "NORTH");
         book3.addCategory("WORLD WAR II");
 
-        AllBooksData.addBook(book1);
-        AllBooksData.addBook(book2);
-        AllBooksData.addBook(book3);
-
         StanfordCollegeLibrary stanfordNorth = new CampusLibrary("NORTH");
         StanfordCollegeLibrary stanfordSouth = new CampusLibrary("SOUTH");
-
 
 
         Borrower student = new Student("ANDREW GARCIA ", 1, "NORTH");
@@ -33,8 +28,7 @@ public class App {
         student.showAvailableBooks("NORTH");
         student.showAvailableBooks("SOUTH");
 
-        System.out.println();
-
+        System.out.println(AllBooksData.getAmountOfBooksInCategory("FANTASY"));
 
     }
 }

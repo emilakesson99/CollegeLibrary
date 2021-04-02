@@ -27,7 +27,7 @@ public class Borrower implements CanBorrow {
         return FacadeFactory.buildFactory(libraryName);
     }
 
-    public void showAvailableBooks(String libraryName) {
+    public void showAvailableBooks(String libraryName) throws NoBookIssuedException {
         List<Book> list = getFacade(libraryName).getAvailableBooks();
         if (list.isEmpty()) {
             System.out.println("No books available");

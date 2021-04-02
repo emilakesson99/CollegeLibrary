@@ -1,4 +1,10 @@
 public class AvailableBooks extends AvailableBooksData {
+
+    /**
+     * Gets the available books from the database relevant to the library in question
+     *
+     * @param libraryName
+     */
     @Override
     public void updateAvailableBooks(String libraryName) {
         for (Book book : AllBooksData.getBooks()) {
