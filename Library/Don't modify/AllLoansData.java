@@ -7,6 +7,12 @@ public class AllLoansData {
      */
     private static final List<Loan> loans = new ArrayList<>();
 
+    /**
+     * Returns all active loans of a user
+     *
+     * @param borrower
+     * @return List<Loan>
+     */
     public static List<Loan> getUserSpecificLoans(CanBorrow borrower) {
 
         List<Loan> copyLoans = new ArrayList<>(loans);

@@ -26,7 +26,7 @@ public abstract class PublicData implements DataWrapper {
 
     @Override
     public <T extends CanBorrow> void lendBook(Book book, T borrower) throws NoBookFoundException {
-        availableBooks.lendBook(book, borrower);
+        availableBooks.borrowBook(book, borrower);
     }
 
     @Override

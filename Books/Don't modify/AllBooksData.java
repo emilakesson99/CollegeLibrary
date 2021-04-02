@@ -13,6 +13,12 @@ public class AllBooksData {
         return books;
     }
 
+    /**
+     * Counts amount of books in a specific category
+     *
+     * @param checkC
+     * @return
+     */
     public static int getAmountOfBooksInCategory(String checkC) {
 
         int result = 0;

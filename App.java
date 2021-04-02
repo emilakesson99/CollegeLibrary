@@ -22,13 +22,13 @@ public class App {
         student.showAvailableBooks("SOUTH");
         System.out.println();
         student.borrowBook(book1, "NORTH");
-        student.borrowBook(book2, "SOUTH");
+        student.borrowBook(book2, "SOUTH"); //Changing this to "NORTH" will throw a exception, as it should
         student.showLoans();
         System.out.println();
         student.showAvailableBooks("NORTH");
         student.showAvailableBooks("SOUTH");
-
-        System.out.println(AllBooksData.getAmountOfBooksInCategory("FANTASY"));
+        System.out.println();
+        System.out.println("amount of books in Fantasy:" + AllBooksData.getAmountOfBooksInCategory("FANTASY"));
 
     }
 }

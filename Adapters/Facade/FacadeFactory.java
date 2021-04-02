@@ -1,6 +1,7 @@
 public class FacadeFactory {
     /**
-     * Factory cases for each library at a college
+     * Factory cases for each librar and one instance
+     * of a library if you only want to see your loans
      *
      * @param libraryName
      * @return

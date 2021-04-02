@@ -5,6 +5,11 @@ public class AllCategoriesData {
 
     private static final List<String> categories = new ArrayList<>();
 
+    /**
+     * Add a new category if it doesn't already exist
+     *
+     * @param category
+     */
     public static void addCategory(String category) {
         if (!checkCategory(category)) {
             categories.add(category);

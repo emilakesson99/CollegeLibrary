@@ -2,23 +2,47 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AvailableBooksData implements BookModel {
+public class AvailableBooksData implements BookModel {
 
+    private final String libraryName;
     private final List<Book> books = new ArrayList<>();
+
+    /**
+     * Constructor
+     *
+     * @param libraryName
+     */
     public AvailableBooksData(String libraryName) {
+        this.libraryName = libraryName;
         updateAvailableBooks(libraryName);
     }
 
     /**
-     * This method could be extended so it adds books from a certain region ex NORTH
+     * Adds books available from the database related to specific library
      */
-    abstract public void updateAvailableBooks(String s);
+    @Override
+    public void updateAvailableBooks(String libraryName) {
+        for (Book book : AllBooksData.getBooks()) {
+            if (!checkBook(book) & book.isAvailable() & book.getLocation().equals(libraryName)) {
+                getBooks().add(book);
+            }
+        }
+    }
 
     public Boolean checkBook(Book book) {
         return books.contains(book);
     }
 
-    public <T extends CanBorrow> void lendBook(Book book, T borrower) throws NoBookFoundException {
+    /**
+     * Borrow a Book
+     *
+     * @param book
+     * @param borrower
+     * @param <T>
+     * @throws NoBookFoundException
+     */
+    public <T extends CanBorrow> void borrowBook(Book book, T borrower) throws NoBookFoundException {
+
         if (!checkBook(book)) {
             throw new NoBookFoundException();
         }
@@ -36,12 +60,24 @@ public abstract class AvailableBooksData implements BookModel {
 
     }
 
+    /**
+     * Return a book
+     *
+     * @param book
+     * @param borrower
+     * @param <T>
+     * @throws NoBookFoundException
+     */
     public <T extends CanBorrow> void returnBook(Book book, T borrower) throws NoBookFoundException {
         for (Loan l : AllLoansData.getUserSpecificLoans(borrower)) {
             if (l.book == book) {
-                book.setState(new Available());
+                //change book status
                 books.add(book);
+                book.setLocation(libraryName);
+                book.setState(new Available());
+                //remove loan
                 AllLoansData.removeLoan(l);
+
                 break;
             } else {
                 throw new NoBookFoundException();

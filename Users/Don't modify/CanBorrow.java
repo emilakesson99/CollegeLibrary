@@ -1,5 +1,6 @@
-
-
+/**
+ * Interface to be implemented by a client who is allowed to use library functions
+ */
 public interface CanBorrow {
     LibraryFacade getFacade(String location);
 
